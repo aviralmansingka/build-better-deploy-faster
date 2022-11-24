@@ -11,4 +11,6 @@ jobs:
           java-version: "17"
           distribution: "adopt"
           cache: "gradle"
-      - run: ./airport-service/gradlew build --no-daemon
+      - run: |
+          cd airport-service
+          ./gradlew build --no-daemon
