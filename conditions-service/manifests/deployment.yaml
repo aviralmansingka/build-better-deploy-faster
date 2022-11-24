@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: conditions-service
+  labels:
+    app: conditions-service
+spec:
+  ports:
+    - port: 8082
+      protocol: TCP
+  clusterIP: None
+  selector:
+    app: conditions-service
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conditions-service
+  labels:
+    app: conditions-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: conditions-service
+  template:
+    metadata:
+      labels:
+        app: conditions-service
+    spec:
+      containers:
+        - name: conditions-service
+          image: gcr.io/aviralmansingka-pulumi-gke/conditions-service

@@ -1,0 +1,29 @@
+spring.application.name: gateway-service
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: report
+          uri: lb://report-service
+          predicates:
+            - Path=/report/**
+          filters:
+            - RewritePath=/report, /
+        - id: ap
+          uri: lb://airport-service/
+          predicates:
+            - Path=/airport/**
+          filters:
+            - StripPrefix=1
+        - id: wx
+          uri: lb://weather-service/
+          predicates:
+            - Path=/weather/**
+          filters:
+            - StripPrefix=1
+        - id: cond
+          uri: lb://conditions-service/
+          predicates:
+            - Path=/conditions/**
+          filters:
+            - StripPrefix=1

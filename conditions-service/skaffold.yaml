@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: conditions-service
+build:
+  artifacts:
+    - image: gcr.io/aviralmansingka-pulumi-gke/conditions-service
+      jib: {}
+deploy:
+  kubectl:
+    manifests:
+      - manifests/*

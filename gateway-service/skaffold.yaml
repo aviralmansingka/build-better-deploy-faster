@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: gateway-service
+build:
+  artifacts:
+    - image: gcr.io/aviralmansingka-pulumi-gke/gateway-service
+      jib: {}
+deploy:
+  kubectl:
+    manifests:
+      - manifests/*
