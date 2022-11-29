@@ -4,8 +4,6 @@ package com.aviral.weatherservice;
 import "google/protobuf/timestamp.proto";
 
 option java_multiple_files = true;
-option java_package = "net.devh.boot.grpc.examples.lib";
-option java_outer_classname = "HelloWorldProto";
 
 // The greeting service definition.
 service METARService {

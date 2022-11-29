@@ -22,6 +22,7 @@ dependencies {
 	implementation "io.grpc:grpc-protobuf:1.50.1"
 	implementation "io.grpc:grpc-stub:1.50.1"
 	implementation 'com.google.protobuf:protoc:3.21.4'
+
 	implementation group: 'io.netty', name: 'netty-resolver-dns-native-macos', classifier: 'osx-aarch_64'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'

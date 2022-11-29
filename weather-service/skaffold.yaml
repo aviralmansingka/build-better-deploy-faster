@@ -4,7 +4,7 @@ metadata:
   name: weather-service
 build:
   artifacts:
-    - image: gcr.io/aviralmansingka-pulumi-gke/weather-service
+    - image: gcr.io/build-better-deploy-faster/weather-service
       jib: {}
 deploy:
   kubectl:
