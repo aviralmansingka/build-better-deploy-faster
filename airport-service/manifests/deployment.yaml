@@ -30,4 +30,6 @@ spec:
     spec:
       containers:
         - name: airport-service
-          image: gcr.io/aviralmansingka-pulumi-gke/airport-service
+          image: gcr.io/build-better-deploy-faster/airport-service
+          ports:
+            - containerPort: 8080

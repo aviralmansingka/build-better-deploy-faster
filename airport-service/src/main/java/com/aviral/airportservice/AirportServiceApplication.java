@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -105,7 +106,8 @@ class AirportService {
   }
 }
 
-interface AirportRepository extends ReactiveCrudRepository<Airport, String> {}
+interface AirportRepository extends ReactiveCrudRepository<Airport, String> {
+}
 
 @Document
 record Airport(
@@ -116,6 +118,8 @@ record Airport(
     String name,
     double latitude,
     double longitude,
-    Iterable<Runway> runways) {}
+    Iterable<Runway> runways) {
+}
 
-record Runway(String ident1, String ident2, int length_ft, int width_ft) {}
+record Runway(String ident1, String ident2, int length_ft, int width_ft) {
+}

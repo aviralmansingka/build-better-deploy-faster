@@ -4,7 +4,7 @@ metadata:
   name: airport-service
 build:
   artifacts:
-    - image: gcr.io/aviralmansingka-pulumi-gke/airport-service
+    - image: gcr.io/build-better-deploy-faster/airport-service
       jib: {}
 deploy:
   kubectl:
