@@ -4,7 +4,7 @@ metadata:
   name: gateway-service
 build:
   artifacts:
-    - image: gcr.io/aviralmansingka-pulumi-gke/gateway-service
+    - image: gcr.io/build-better-deploy-faster/gateway-service
       jib: {}
 deploy:
   kubectl:

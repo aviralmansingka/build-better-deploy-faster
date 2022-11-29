@@ -30,6 +30,6 @@ spec:
     spec:
       containers:
         - name: gateway-service
-          image: gcr.io/aviralmansingka-pulumi-gke/gateway-service
+          image: gcr.io/build-better-deploy-faster/gateway-service
           ports:
             - containerPort: 8082
