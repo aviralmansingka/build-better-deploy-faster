@@ -1,3 +1,4 @@
+logging.level.root: DEBUG
 spring.application.name: gateway-service
 server.connection-timeout: 2000
 server:
@@ -9,28 +10,3 @@ server:
     key-store: classpath:gateway.p12
     key-store-password: password
     key-alias: gateway
-spring:
-  cloud:
-    gateway:
-      httpclient:
-        ssl:
-          use-insecure-trust-manager: true
-      routes:
-        - id: ap
-          uri: lb://airport-service/
-          predicates:
-            - Path=/airport/**
-          filters:
-            - StripPrefix=1
-        - id: wx
-          uri: lb://weather-service/
-          predicates:
-            - Path=/weather/**
-          filters:
-            - StripPrefix=1
-        - id: cond
-          uri: lb://conditions-service/
-          predicates:
-            - Path=/conditions/**
-          filters:
-            - StripPrefix=1

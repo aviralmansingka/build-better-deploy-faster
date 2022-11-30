@@ -8,32 +8,14 @@ data:
     test.message: inside updated count 6 ConfigMap
     avwx:
       token: "{cipher}9a73970dce514356a2bd5468d6c2cecd94f54dfcf33a5167ee0cea4323a61aee4f33967f46e48311f2f9ec89bd64bedd5fb0facad2befc47809f7136622d057c"
-
     spring:
       cloud:
         gateway:
+          httpclient:
+            ssl:
+              use-insecure-trust-manager: true
           routes:
-          - id: report
-            uri: http://report-service
-            predicates:
-            - Path=/report/**
-            filters:
-            - RewritePath=/report, /
-          - id: ap
-            uri: http://airport-service:8083/
-            predicates:
-            - Path=/airport/**
-            filters:
-            - StripPrefix=1
-          - id: wx
-            uri: lb://weather-service:8081
-            predicates:
-            - Path=/weather/**
-            filters:
-            - StripPrefix=1
-          - id: cond
-            uri: http://conditions-service/
-            predicates:
-            - Path=/conditions/**
-            filters:
-            - StripPrefix=1
+            - id: wx
+              uri: lb://weather-service/
+              predicates:
+              - Path=/**
