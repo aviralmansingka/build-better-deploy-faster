@@ -17,14 +17,3 @@ spring:
             name: gateway-service
       reload:
         enabled: true
-        strategy: restart_context
-server:
-  port: 8082
-  http2:
-    enabled: true
-  ssl:
-    key-store-type: PKCS12
-    key-store: classpath:gateway.p12
-    key-store-password: password
-    key-password: password
-    enabled: true

@@ -16,6 +16,6 @@ data:
               use-insecure-trust-manager: true
           routes:
             - id: wx
-              uri: lb://weather-service/
+              uri: https://weather-service:9090/
               predicates:
               - Path=/**

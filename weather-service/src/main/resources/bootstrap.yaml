@@ -9,4 +9,3 @@ spring:
             name: weather-service
       reload:
         enabled: true
-        strategy: restart_context

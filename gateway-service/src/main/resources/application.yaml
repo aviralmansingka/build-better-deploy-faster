@@ -2,6 +2,7 @@ logging.level.root: DEBUG
 spring.application.name: gateway-service
 server.connection-timeout: 2000
 server:
+  port: 8082
   http2:
     enabled: true
   ssl:
