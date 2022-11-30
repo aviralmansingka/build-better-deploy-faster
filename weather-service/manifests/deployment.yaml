@@ -10,7 +10,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8081
+      targetPort: 9090
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -32,4 +32,4 @@ spec:
         - name: weather-service
           image: gcr.io/build-better-deploy-faster/weather-service
           ports:
-            - containerPort: 8081
+            - containerPort: 9090
